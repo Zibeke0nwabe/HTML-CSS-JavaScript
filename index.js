@@ -1,0 +1,1 @@
+document.getElementById('p').innerText = 'Checking the connections';

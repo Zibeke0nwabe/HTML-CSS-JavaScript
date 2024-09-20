@@ -1,3 +1,253 @@
-body{
-    background-color: red;
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container Flex Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: #282828;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #444;
+}
+
+.navbar-bottom {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Balance and Deposit Button */
+.balance-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.deposit-btn {
+    background-color: #ffc107;
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deposit-btn:hover {
+    background-color: #e0a806;
+}
+
+.balance {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #333;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-color: #ffc107;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.hero .highlight {
+    color: #282828;
+}
+
+.hero p.subtitle {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Instructions Section */
+.instructions {
+    padding: 2rem;
+    text-align: center;
+}
+
+.instructions h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.instructions p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Play Area Section */
+.play-area {
+    padding: 1rem;
+    text-align: center;
+}
+#message{
+    text-align: center;
+    font-weight: 900;
+    color: red;
+}
+.inputs-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.number-input {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 0.3rem;
+}
+
+.submit-btn {
+    background-color:#ffc107;
+    color: black;
+    padding: 0.8rem 2rem;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-top: 10px;
+    
+}
+
+.submit-btn:hover {
+    background-color:  #f2b910;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #282828;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .inputs-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .inputs-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
 }

@@ -3,17 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto System</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <title>Home - LottoProX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <container>
-        <nav></nav>
-        <main>
-            <p id="p"></p>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-top">
+                <div class="logo">LottoProX</div>
+                <div class="balance-section">
+                    <button class="deposit-btn" onclick="addTicket();">Deposit</button>
+                    <span class="balance">Balance: <span id="balance">R10.00</span></span>
+                </div>
+            </div>
+            <div class="navbar-bottom">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="promotion.html">Promotions</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Menu toggle">&#9776;</button>
+            </div>
+        </nav>
+            <main>
+            <section class="hero">
+                <h1>Stand a Chance to Win <span class="highlight">R10 Million – Instantly!</span></h1>
+                <p class="subtitle">Join now, pick your lucky numbers, and become a winner immediately! No waiting for any draws.</p>
+            </section>
+            <section class="instructions">
+                <h2>Play Lotto & Win Big</h2>
+                <p>Enter 6 numbers between 1 and 59, and get the chance to win incredible prizes. The best part? Instant results – no waiting for any draw!</p>
+            </section>
+            <p id="message"></p>
+            <section class="play-area">
+                <h2>Pick Your Numbers</h2>
+                <form id="lottoForm">
+                    <div class="inputs-wrapper">
+                        <input type="number" min="1" max="59" class="number-input" required>
+                        <input type="number" min="1" max="59" class="number-input" required>
+                        <input type="number" min="1" max="59" class="number-input" required>
+                        <input type="number" min="1" max="59" class="number-input" required>
+                        <input type="number" min="1" max="59" class="number-input" required>
+                        <input type="number" min="1" max="59" class="number-input" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Your Numbers</button>
+                </form>
+            </section>
         </main>
-        <footer></footer>
-    </container>
+
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

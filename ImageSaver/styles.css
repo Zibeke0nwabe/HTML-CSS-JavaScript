@@ -1,0 +1,136 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        nav{
+            height: 80px;
+            width: 97.8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #320988;
+            padding-left: 10px;
+            padding-right: 20px;
+        } 
+        nav h1{
+            font-size: 23px;
+            color: white;
+            font-weight: 600;
+        } 
+        nav a{
+            color: #320988;
+            text-decoration: none;
+            font-size: 18px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        .user_infor{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .SignIn-Up{
+            max-width: 300px;
+        }
+        
+        form {
+            margin-top: 20px;
+        }
+        .containerDesh{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="file"]{
+            display: block;
+            width: 97.8%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        #imageContainer {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-around;
+    
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        #imageContainer img {
+            width:  240px;
+            height: 210px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #downloadLink {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+        button{
+            background-color: #320988;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+          }
+          
+          .explore-btn:hover {
+           opacity: 0.6;
+          }
+          @media(max-width:760px) {
+            nav{
+                height: 80px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #320988;
+                padding-left: 10px;
+                padding-right: 20px;
+            } 
+            nav h1{
+                font-size: 23px;
+                color: white;
+                font-weight: 600;
+            } 
+            nav a{
+                color: #320988;
+                text-decoration: none;
+                font-size: 18px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 5px;
+                margin-right: 10px;
+                background-color: white;
+            }  
+          }
+    
+        

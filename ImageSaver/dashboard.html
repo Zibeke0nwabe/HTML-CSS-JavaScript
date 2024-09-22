@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>   
+    <div class="containerDesh">
+        <nav>
+            <h1 class="dashHeading">Image Protector</h1>
+        <a class="logoutBtn" href="index.html">logout</a>
+        </nav>
+        <form id="uploadForm" onsubmit="uploadImage(); return false;">
+            <input type="file" id="fileInput" accept="image/*" required>
+            <button style="margin-left: 1.2rem; margin-top: 1.2rem;" type="submit">Upload</button>
+        </form>
+        <h2 style="margin-left: 1.2rem;">My Images</h2>
+        <div id="imageContainer">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

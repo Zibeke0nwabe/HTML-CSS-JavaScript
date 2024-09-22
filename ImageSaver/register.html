@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="user_infor">
+    <div class="container SignIn-Up">
+        <h1>Register</h1>
+        <form id="registerForm" onsubmit="register(); return false;">
+            <input type="text" id="reg-username" placeholder="Username" required>
+            <input type="password" id="reg-password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required>
+            <span id="passwordError" style="color: red;"></span><br/>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

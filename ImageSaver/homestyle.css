@@ -1,0 +1,158 @@
+.container{
+    display: grid;
+    grid-template-rows: 560px 1.2fr 1.2fr 0.2fr;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+}
+main{
+    background-image: url(https://th.bing.com/th/id/R.2339bdffa20f5d1243d15b63975cf53c?rik=unWqxdK1ke%2bcLg&pid=ImgRaw&r=0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home-btn {
+    background-color: #320988;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bolder;
+    transition: background-color 0.3s ease;
+  }
+.home-btn:hover {
+    opacity: 0.6;
+  }
+main h1{
+    color:white;
+}
+main span{
+    color: red;
+}
+hr{
+    width: 270px;
+    color: red;
+    border-bottom: 6px solid;
+    border-radius: 5px;
+}
+.content1-cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4px;
+    grid-template-rows: 1fr;
+    margin-top: 30px;
+    margin-left: 0.6rem;
+    margin-right: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+.content1-image{
+  width: 96.8%;
+  padding-top: 25px;
+  height: 450px;
+  border-radius: 4px;
+}
+.description{
+    font-size: 21;
+    padding-left: 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+}
+.content2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+    margin-top: 10px;
+}
+.card {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+.card img {
+    width: 100%;
+    object-fit: cover;
+    height: 430px;
+    border-radius: 4px;
+  }
+  
+.card-content {
+      padding: 20px;
+  }
+  
+.card-content p {
+      margin-bottom: 10px;
+  }
+  
+.explore-btn {
+      background-color: #320988;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+.explore-btn:hover {
+     opacity: 0.6;
+  }
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    color: #333;
+    font-size: 18px;
+}
+
+.github-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.github-btn:hover {
+    background-color: #555;
+}
+@media (max-width: 960px){
+  .container{
+    grid-template-rows: 560px 1fr 1fr 0.2fr;
+  }
+ 
+  .content1-cont{
+    display: flex;
+    width: 98%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    }
+  .content2{
+    display: flex;
+    flex-direction: column;
+}
+.content1-image{
+  width: 88%;
+  height: 340px;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+.description{
+  font-size: 16;
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+  height: 210px;
+}
+}

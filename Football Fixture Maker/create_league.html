@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create League</title>
+    <style>
+        /* Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('R.jpg'); /* Replace 'R.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        h1 {
+            font-size: 36px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #submitBtn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #submitBtn:hover {
+            background-color: #45a049;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create League</h1>
+        <form id="leagueForm">
+            <input type="text" id="leagueName" placeholder="Enter League Name">
+            <input type="text" id="numTeams" placeholder="Enter Number of Teams (must be >= 4)">
+            <div id="teamInputs"></div>
+            <button type="submit" id="submitBtn">Create League</button>
+        </form>
+    </div>
+    <footer>Created by <strong>O.Zibeke</strong></footer>
+    <script>
+        document.getElementById("leagueForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var leagueName = document.getElementById("leagueName").value;
+            var numTeams = parseInt(document.getElementById("numTeams").value);
+            if (isNaN(numTeams) || numTeams < 4) {
+                alert("Please enter a valid number of teams (must be >= 4).");
+                return;
+            }
+            var teams = [];
+            for (var i = 1; i <= numTeams; i++) {
+                var teamName = prompt("Enter the name of team " + i + ":");
+                if (!teamName) {
+                    alert("Please enter a name for all teams.");
+                    return;
+                }
+                teams.push(teamName);
+            }
+            var schedule = generateSchedule(teams);
+            localStorage.setItem('league_schedule', JSON.stringify(schedule));
+            window.location.href = "league_results.html";
+        });
+
+        function generateSchedule(teams) {
+            var schedule = [];
+            var numDays = teams.length - 1; // Each team plays one game per day
+
+            // Shuffle teams to ensure randomness in pairing
+            teams = shuffle(teams);
+
+            for (var day = 0; day < numDays; day++) {
+                var dailyMatches = [];
+
+                // Ensure each team plays one game per day
+                var remainingTeams = teams.slice(); // Create a copy of teams array
+                while (remainingTeams.length > 1) {
+                    var team1 = remainingTeams.pop(); // Remove last team from array
+                    var team2 = remainingTeams.shift(); // Remove first team from array
+                    var matchTime = generateRandomTime(); // Generate random time for the match
+                    dailyMatches.push([team1, team2, matchTime]); // Pair teams with time
+                }
+                schedule.push(dailyMatches);
+                teams.push(teams.shift()); // Rotate teams for the next day
+            }
+            return schedule;
+        }
+
+        // Generate random time between 9:30 to 16:30
+        function generateRandomTime() {
+            var hours = Math.floor(Math.random() * (16 - 9 + 1)) + 9; // Random hours between 9 to 16
+            var minutes = Math.floor(Math.random() * 31); // Random minutes between 0 to 30
+            return hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+        }
+
+        // Shuffle function to randomize array elements
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+    </script>
+</body>
+</html>
